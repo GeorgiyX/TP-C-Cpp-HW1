@@ -21,6 +21,7 @@ script:
   - cd ..
   - mkdir build-test
   - cd build-test
-  - cmake ../project/.
+  - cmake -DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="g++" ../project/.
   - cmake --build .
   - valgrind --tool=memcheck ./tests ${PWD}/..
+  - bash <(curl -s https://codecov.io/bash)
