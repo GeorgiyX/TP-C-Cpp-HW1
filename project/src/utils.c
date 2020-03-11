@@ -7,6 +7,12 @@
 #define RESOURCE_TYPE_COUNT 3
 #define UNITS_COUNT 8
 
+#if (defined _TESTING)
+#include "moc.hpp"
+#define printf moc_printf
+#define scanf moc_scanf
+#endif
+
 struct resource {
     char *cipher;
     char *name;
