@@ -1,12 +1,7 @@
-
 #include <moc.hpp>
 #include <cstdarg>
 #include <iostream>
 #include "utils.hpp"
-
-#define INPUT_FILE "INPUT.txt"
-#define OUT_FILE "INPUT.txt"
-
 
 int moc_printf(const char *format, ...) {
     FILE *out_file = fopen((TestAssist::basePath + std::string(TEST_DATA_PATH) + TestAssist::currentTestDir +

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "utils.h"
+#include "module.h"
 
 int main() {
     printf("Type resources information:\n");

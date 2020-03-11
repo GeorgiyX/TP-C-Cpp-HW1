@@ -1,5 +1,5 @@
-#ifndef TP_C_CPP_HW1_UTILS_H
-#define TP_C_CPP_HW1_UTILS_H
+#ifndef TP_C_CPP_HW1_MODULE_H
+#define TP_C_CPP_HW1_MODULE_H
 
 typedef struct resource resource;
 typedef struct resource_node resource_node;  // Stores pointer to resource and pointer to previous resource
@@ -21,4 +21,4 @@ void free_resource(resource *resource);
 size_t **create_resource_information();
 void free_resource_information(size_t **information);
 
-#endif //TP_C_CPP_HW1_UTILS_H
+#endif //TP_C_CPP_HW1_MODULE_H

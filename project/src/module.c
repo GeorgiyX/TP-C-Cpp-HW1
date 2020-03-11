@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "utils.h"
+#include "module.h"
 
 #define RESOURCE_FIELD_COUNT 5
 #define RESOURCE_TYPE_COUNT 3

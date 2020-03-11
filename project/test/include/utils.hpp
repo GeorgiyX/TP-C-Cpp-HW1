@@ -18,4 +18,7 @@ private:
     static std::string getStringFromFile(const std::string& path);
 };
 
+void testCase();
+
+
 #endif //TP_C_CPP_HW1_UTILS_HPP
