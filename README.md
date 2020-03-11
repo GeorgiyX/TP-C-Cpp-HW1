@@ -1,4 +1,4 @@
-### ИЗ№1.   [![Build Status](https://travis-ci.org/GeorgiyX/TP-C-Cpp-HW1.svg?branch=making-hw-1)](https://travis-ci.org/GeorgiyX/TP-C-Cpp-HW1)
+### ИЗ№1.   [![Build Status](https://travis-ci.org/GeorgiyX/TP-C-Cpp-HW1.svg?branch=making-hw-1)](https://travis-ci.org/GeorgiyX/TP-C-Cpp-HW1)  [![codecov](https://codecov.io/gh/GeorgiyX/TP-C-Cpp-HW1/branch/making-hw-1/graph/badge.svg)](https://codecov.io/gh/GeorgiyX/TP-C-Cpp-HW1)
 ***
 **Условие:**
 Создать структуру для хранения ресурсной ведомости: шифра, наименования и количества, а также единиц измерения и вида ресурсов (сырье и материалы, затраты на труд, машины и механизмы). Составить с ее использованием программу вывода информации, свернутой по виду ресурсов и единицам измерения (для этого, например, сложить всю информацию о сырье, вес которого выражен в тоннах, или затраты на машины и механизмы, выраженные в машино-часах).
