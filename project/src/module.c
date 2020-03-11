@@ -8,7 +8,9 @@
 #define UNITS_COUNT 8
 
 #if (defined _TESTING)
+
 #include "moc.hpp"
+
 #define printf moc_printf
 #define scanf moc_scanf
 #endif
@@ -90,8 +92,7 @@ resource_node ***collect_resources_data() {
 }
 
 resource_node *get_resource_node_from_input() {
-    resource_node *node = NULL;
-    node = create_resource_node();
+    resource_node *node = create_resource_node();
     if (!node) {
         return NULL;
     }
@@ -100,8 +101,9 @@ resource_node *get_resource_node_from_input() {
         return NULL;
     }
     if ((scanf("%ms %ms %lu %lu %lu", &node->current_resource->cipher, &node->current_resource->name,
-               &node->current_resource->quantity, &node->current_resource->resource_type,
-               &node->current_resource->unit) != RESOURCE_FIELD_COUNT) ||
+               (unsigned long *) &node->current_resource->quantity,
+               (unsigned long *) &node->current_resource->resource_type,
+               (unsigned long *) &node->current_resource->unit) != RESOURCE_FIELD_COUNT) ||
         node->current_resource->resource_type >= RESOURCE_TYPE_COUNT ||
         node->current_resource->unit >= UNITS_COUNT) {
         free_resource_node(node);
@@ -150,7 +152,7 @@ void print_resource_information(const size_t **const information) {
     for (size_t i = 0; i < RESOURCE_TYPE_COUNT; ++i) {
         printf("%s:\n", types_names[i]);
         for (size_t j = 0; j < UNITS_COUNT; ++j) {
-            printf("\t%s = %lu\n", units_names[j], information[i][j]);
+            printf("\t%s = %lu\n", units_names[j], (unsigned long) information[i][j]);
         }
     }
 }

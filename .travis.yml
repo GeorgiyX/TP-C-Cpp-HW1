@@ -1,0 +1,30 @@
+dist: bionic
+sudo: required
+language: cpp
+os:
+  - linux
+compiler:
+  - gcc
+install:
+  - apt-get update --yes
+  - apt-get install --yes cmake
+  - apt-get install --yes libgtest-dev
+  - apt-get install --yes valgrind
+  - apt-get install --yes cppcheck
+
+before_script:
+  - ./linters/run.sh
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cmake --build .
+  - valgrind --tool=memcheck ./TP_C_Cpp_HW1 < ${PWD}/../project/test/test_data/test1/INPUT.txt
+
+  - cd ..
+  - mkdir build-test
+  - cd build-test
+  - cmake ../project/.
+  - cmake --build .
+  - valgrind --tool=memcheck ./tests ${PWD}/..
