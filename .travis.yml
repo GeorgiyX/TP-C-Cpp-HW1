@@ -1,0 +1,27 @@
+dist: bionic
+sudo: required
+language: cpp
+os:
+  - linux
+compiler:
+  - gcc
+install:
+  - source ./ci/install.sh
+
+before_script:
+  - source ./ci/run.sh
+
+script:
+  - mkdir build
+  - cd build
+  - cmake ..
+  - cmake --build .
+  - valgrind --tool=memcheck ./TP_C_Cpp_HW1 < ${PWD}/../project/test/test_data/test1/INPUT.txt
+
+  - cd ..
+  - mkdir build-test
+  - cd build-test
+  - cmake -DENABLE_COVERAGE=ON -DCMAKE_CXX_COMPILER="g++" ../project/.
+  - cmake --build .
+  - valgrind --tool=memcheck ./tests ${PWD}/..
+  - bash <(curl -s https://codecov.io/bash)
