@@ -6,14 +6,14 @@ os:
 compiler:
   - gcc
 install:
-  - apt-get update --yes
-  - apt-get install --yes cmake
-  - apt-get install --yes libgtest-dev
-  - apt-get install --yes valgrind
-  - apt-get install --yes cppcheck
+  - sudo apt-get update --yes
+  - sudo apt-get install --yes cmake
+  - sudo apt-get install --yes libgtest-dev
+  - sudo apt-get install --yes valgrind
+  - sudo apt-get install --yes cppcheck
 
 before_script:
-  - ./linters/run.sh
+  - source ./linters/run.sh
 
 script:
   - mkdir build
